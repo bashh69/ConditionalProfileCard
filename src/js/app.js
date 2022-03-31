@@ -33,14 +33,25 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
+          <h1>${variables.name ? variables.name : "user"} ${
+    variables.lastname ? variables.lastname : "user"
+  } 
+  </h1>
           <h2>Web Developer</h2>
           <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <ul class="position-right" ${variables.socialMediaPosition}>
+            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter">
+            ${variables.twitter ? variables.twitter : "Twitter"}</i></a></li>
+            <li><a href="https://github.com/bashh69"><i class="fab fa-github">${
+              variables.github ? variables.github : "Git"
+            }</i></a></li>
+            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin">${
+              variables.linkedin ? variables.linkedin : "linkedin"
+            }</i></a></li>
+            <li><a href="https://instagram.com/bashhito"><i class="fab fa-instagram">${
+              variables.instagram ? variables.instagram : "instagram"
+            }
+            </i></a></li>
           </ul>
         </div>
     `;
@@ -61,14 +72,14 @@ window.onload = function() {
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,
     lastname: null,
     role: null,
     country: null,
-    city: null
+    city: "city"
   };
   render(window.variables); //render the card for the first time
 
