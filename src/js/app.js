@@ -37,8 +37,9 @@ function render(variables = {}) {
     variables.lastname ? variables.lastname : "user"
   } 
   </h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h2>${variables.role ? variables.role : "Role"}</h2>
+          <h3>${variables.city ? variables.city : "City"} 
+          ${variables.country ? variables.country : "Country"} </h3>
           <ul class="position-right" ${variables.socialMediaPosition}>
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter">
             ${variables.twitter ? variables.twitter : "Twitter"}</i></a></li>
